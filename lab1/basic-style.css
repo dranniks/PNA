@@ -1,0 +1,154 @@
+
+/* опишем базовый стиль кнопки калькулятора */
+.my-btn { 
+    margin-right: 5px;           /* задаем отступ от кнопки справа */
+    margin-top: 5px;             /* задаем отступ от кнопки сверху*/
+    width: 50px;                 /* задаем ширину кнопки */
+    height: 50px;                /* задаем высоту кнопки */
+    /*border-radius: 50%;*/          /* округляем кнопку */
+    border: none;                /* отключаем обводку */
+    background: #55f6c9;         /* задаем серый цвет кнопки */
+    color: black;                /* задаем белый цвет текста внутри кнопки */
+    font-size: 1.5rem;           /* увеличим размер шрифта */
+    font-weight: 800;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif; /* сменим шрифт */
+    cursor: pointer;             /* при наведении на кнопку курсор будет изменен со стрелки на 'указательный палец' */
+    user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+  } 
+  
+  /* hover - это состояние элемента, когда на него наведен курсор */
+  .my-btn:hover {
+    background: #818181;
+  }
+  
+
+  /* active - это состояние активации элемента. В случае кнопки - нажатие на нее */
+  .my-btn:active {
+    filter: brightness(130%); /* увеличим интенсивность цвета для эффекта вспышки */
+  }
+  
+  /* селектор для кнопок первостепенных операций */
+  .my-btn.primary { 
+    background: #b48ef0; /* цвет кнопки оранжевый */
+  }
+  
+  /* селектор для кнопок второстепенных операций */
+  .my-btn.secondary { 
+    background: #f985cd; /* цвет кнопки сервый */
+  }
+  
+  /* селектор для кнопки расчета выражения (=) */
+  .my-btn.execute { 
+    width: 110px;          /* сделаем кнопку шире других */
+  }
+  
+  /* селектор для поля вывода результата */
+  .result { 
+    width: 220px;
+    height: 100px;
+    margin-bottom: 15px;         /* отступ снизу */
+    padding-right: 10px;         /* выступ справа */
+    border-radius: 10px;
+    background: #55f6c9; /* цвет можно задавать и таким образом */
+    text-align: right;           /* примагнитим текст к правой стороне */
+    color: #000000;              /* цвет текста белый */
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('bg.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white; 
+
+}
+
+.calculator-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theme-toggle {
+  display: none;
+}
+
+.toggle-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+}
+
+.toggle-label:hover {
+  background-color: #3b4045; 
+}
+
+.github-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #000000;
+  text-decoration: none;
+}
+
+.github-button:hover {
+  background-color: #3b4045; 
+}
+
+.toggle-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+}
+
+.theme-toggle:checked ~ .calculator-container, .theme-toggle:checked ~ .github-button, 
+.theme-toggle:checked ~ .dropdown-menu, .theme-toggle:checked ~ .dropdown-menu,
+.theme-toggle:checked ~ .collapse-block p, .theme-toggle:checked ~ .collapse-block, 
+.theme-toggle:checked ~ p, .theme-toggle:checked ~ .details-content, 
+.theme-toggle:checked ~ .toggle-label {
+  background-color: #ffffff; 
+  color: black; 
+}
+
+.theme-toggle:not(:checked) ~ .calculator-container {
+  background-color: #000000; 
+  color: white; 
+}
+
+.dropdown-menu {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+}
+.collapse-block  {
+  display: inline-block;
+  padding: 5px 5px;
+  background-color: #000000;
+  color: white;
+}
+p {
+  width: 447px;
+  display: block;
+  padding: 0px 0px;
+  background-color: #000000;
+  color: white;
+}
+
+.collapse-block p {
+  width: 437px;
+  display: block;
+  padding: 0px 0px;
+  background-color: #000000;
+  color: white;
+}

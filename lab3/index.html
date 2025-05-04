@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Ethereum Project</title>
+    <style>
+        body {
+            background-color: #000;
+            color:azure;
+            padding-top: 80px;
+
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #000;
+            border-bottom: 2px solid #f985cd;
+            z-index: 1000;
+            padding: 10px 10px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Фиксированная шапка -->
+    <header class="header">
+        <div class="header-content">
+            <img src="images/logo.png" alt="Ethereum Logo" onclick="window.location.reload()" style="cursor: pointer;">
+            <h3>Ethereum Network and L2</h3>
+        </div>
+    </header>
+
+    <div id="root"></div>
+    
+    <script src="main.js" type="module"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
