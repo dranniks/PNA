@@ -6,14 +6,25 @@ import { L2 } from './entities/l2.entity';
 
 @Injectable()
 export class L2Service {
-  constructor(private fileService: FileService<L2[]>) {}
-  create(createStockDto: CreateL2Dto) {
+  private lastId = 0;
+
+  constructor(private fileService: FileService<L2[]>) {
+    this.initializeLastId();
+  }
+
+  private initializeLastId() {
+    const items = this.fileService.read();
+    this.lastId = items.reduce((max, item) => Math.max(max, item.id), 0);
+  }
+
+  create(createL2Dto: CreateL2Dto) {
     const l2s = this.fileService.read();
-
-    // для простоты новый id = текущее количество карточек + 1
-    const l2 = { ...createStockDto, id: l2s.length + 1 };
-
-    this.fileService.add(l2);
+    const newL2 = { 
+      ...createL2Dto, 
+      id: ++this.lastId // Исправленная генерация ID
+    };
+    this.fileService.add(newL2);
+    return newL2;
   }
 
   findAll(title?: string): L2[] {
